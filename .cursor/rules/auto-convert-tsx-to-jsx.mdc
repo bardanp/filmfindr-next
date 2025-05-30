@@ -1,0 +1,77 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# 🔧 FilmFindr: TypeScript (TSX) to JavaScript (JSX) Conversion Rule
+
+## 1. Purpose & Goal
+
+**Goal:** To ensure a consistent JavaScript-first (`.jsx`) codebase for the FilmFindr project, this rule mandates that any component or file initially in `.tsx` format (TypeScript with JSX) is automatically and accurately converted to valid `.jsx` syntax.
+
+**Rationale:** This project prioritizes a JavaScript-based frontend. Adopting this conversion rule for all incoming `.tsx` code (whether from UI libraries, third-party sources, or AI generation) helps:
+* Maintain codebase consistency.
+* Reduce cognitive load for developers working within a unified JavaScript environment.
+* Avoid potential conflicts or complexities arising from a mixed TypeScript/JavaScript component structure.
+* Align with the project's established preference for `.jsx` files.
+
+This rule is fundamental to how components are integrated and managed within FilmFindr.
+
+---
+
+## 2. Scope of Application
+
+This conversion rule **always applies** in the following scenarios:
+
+* **UI Library Integration:** When components from libraries like Aceternity UI, Shadcn/UI, AnimateUI, or MagicUI are introduced, if they are provided in `.tsx` format.
+* **Third-Party Code:** When incorporating any external React components or snippets written in `.tsx`.
+* **AI-Generated Code:** When FilmFindr code is generated (e.g., by an AI assistant like myself) and defaults to or includes `.tsx` format.
+* **Manual Additions:** If developers inadvertently paste or create `.tsx` files within the project.
+* **File Locations:** This rule applies to components intended for, but not limited to:
+    * `components/`
+    * `components/ui/`
+    * `components/magicui/`
+    * `components/aceternity/ui/`
+    * `components/animate-ui/`
+    * Any other custom component directories within the project.
+
+---
+
+## 3. Core Conversion Directives
+
+The conversion process must strictly adhere to the following:
+
+* **Target Format:** All `.tsx` files **must** be converted to `.jsx` files. The file extension must be changed accordingly.
+* **TypeScript Syntax Removal:** All TypeScript-specific syntax must be completely stripped. This includes, but is not limited to:
+    * **Type Annotations:** Remove from function parameters, variable declarations, return values (e.g., `: string`, `: React.FC<Props>`, `useState<boolean>`).
+    * **Interfaces and Type Aliases:** Eliminate all `interface` and `type` declarations.
+    * **Enums:** Remove `enum` declarations.
+    * **Generics:** Remove generic type parameters (e.g., `<T>`, `Array<string>`).
+    * **Type Assertions:** Remove `as` keyword assertions (e.g., `foo as string`).
+    * **Non-Null Assertions:** Remove the `!` operator (e.g., `user!.name`).
+    * **Access Modifiers:** Remove `public`, `private`, `protected` (typically from class components, though less common with functional components).
+    * **Readonly Properties:** Remove `readonly` modifiers.
+    * `satisfies` operator.
+* **Import Path Updates:** If converting a module that is imported by other files, ensure those import statements are updated to reference the new `.jsx` file extension (e.g., `import MyComponent from './MyComponent.jsx';`).
+* **JSDoc for Clarity (Optional but Recommended for Complex Props):** While not TypeScript, for complex components, consider adding JSDoc comments to describe prop shapes and types for better maintainability in the JavaScript environment. This is a secondary consideration after pure TSX stripping.
+
+---
+
+## 4. Preferred JavaScript Component Style
+
+When converting or generating components, the preferred JavaScript functional component style for FilmFindr is:
+
+```javascript
+// Preferred style for named exports
+export const MyComponent = ({ prop1, prop2 }) => {
+  // Component logic and JSX
+  return <div>{prop1}</div>;
+};
+
+// Preferred style for default exports
+export default function MyComponent({ prop1, prop2 }) {
+  // Component logic and JSX
+  return <div>{prop1}</div>;
+}
+

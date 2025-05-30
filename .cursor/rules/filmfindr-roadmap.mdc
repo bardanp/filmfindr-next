@@ -1,0 +1,97 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# 🛣️ FilmFindr – Development Roadmap
+
+This roadmap outlines the strategic, phased development plan for FilmFindr. Each phase is designed to build upon the last, progressively delivering the core value proposition of **"delightful relief"** [cite: 3, 307, 389, 425] from streaming decision fatigue. We will iteratively realize the full vision outlined in the `filmfindr-modules.mdc`[cite: 201, 306, 372, 794, 1010], ensuring that every stage embodies the FilmFindr brand essence: **Smart & Insightful, Playful & Engaging, Cinematic & Immersive, and Modern & Stylish**[cite: 5, 308, 390, 427].
+
+---
+
+## ✅ MVP – Phase 1: Core Discovery & Curation Foundation
+
+**Goal:** Launch a focused, polished Minimum Viable Product that delivers immediate value by providing a core AI-driven recommendation experience and essential watchlist functionality. This phase will establish FilmFindr's signature **"Cinematic Minimalism with Personality"** [cite: 16, 308, 316, 340, 345, 362, 385, 401, 406, 411, 417, 438, 516, 529, 541, 570, 578, 652, 670, 687, 738, 752, 762, 767, 785, 903, 916, 928, 957, 965] and introduce users to their **"trusted, stylish, and intelligent guide"**[cite: 3, 307, 388, 425].
+
+### 🔐 Authentication
+-   **Secure User Onboarding:** Implement Firebase Authentication for email/password sign-up and login[cite: 310, 370, 732]. Forms will utilize `Zod` for validation and `react-hook-form`[cite: 312, 313, 353, 370, 734, 735], styled with `shadcn/ui` [cite: 354, 363, 776, 785] components for a seamless, trustworthy experience that aligns with our **"Modern & Stylish"** [cite: 19, 308, 309, 390, 427, 441] personality.
+-   **Global Auth Context:** Establish a global context for managing `user`, `loading` state, and `logout()` functionality[cite: 317, 318, 739, 740].
+-   **Protected Routes:** Secure core user areas like `/dashboard` by redirecting unauthenticated users[cite: 319, 320, 741, 742].
+
+### 🎬 Movie Discovery (Foundation for the "Intelligent Curator" [cite: 7, 202, 308, 321, 390, 427, 429, 624, 743, 816, 1011])
+-   **AI Recommendation Engine (Basic Version):** Introduce the recommendation feed on the `/dashboard`[cite: 322, 357, 744, 779]. For MVP, this may use a curated/seeded dataset [cite: 323, 745] but will be presented to *feel* personalized and intriguing[cite: 324, 746], showcasing the potential of our **"quietly brilliant"** [cite: 8, 203, 308, 321, 395, 430, 625, 743, 817, 1012] AI.
+-   **Content Display Cards:** Recommendations will be displayed in elegant cards showing essential information: high-quality poster art, title, genre tags, a brief synopsis, and placeholder streaming availability[cite: 330, 331, 332, 752, 753, 754]. Presentation will use simple **"Cinematic Reveal Animations"**[cite: 135, 210, 333, 632, 755, 1019].
+-   **Basic Filtering:** Allow users to refine the feed by core genres, a select few representative moods (e.g., via simple, stylish tags using `pink-accent` sparingly [cite: 68, 327, 490, 749]), and basic duration categories[cite: 326, 328, 748, 750]. This provides an early taste of the **"Mood-Based Discovery UI"**[cite: 134, 215, 326, 637, 748, 1024].
+
+### 📝 Watchlist (Personal Curation Kickstart)
+-   **Core Watchlist Functionality:** Users can add/remove titles from the recommendation feed to their personal watchlist[cite: 335, 336, 757, 758]. Interactions will be smooth with clear visual feedback[cite: 337, 759].
+-   **Data Persistence:** Watchlists stored in Firestore, linked to the user's account[cite: 338, 342, 760, 764].
+-   **Watchlist Display:** A dedicated `/dashboard/watchlist` page will list saved items using clean, card-based layouts consistent with **"Cinematic Minimalism with Personality"**[cite: 16, 340, 762]. Basic sorting (e.g., "Recently Added") will be available[cite: 343, 765].
+
+### 💻 App Structure & UI Foundation
+-   **Theming:** Implement dark (default/recommended [cite: 17, 38, 345, 367, 389, 421, 425, 439, 460, 767, 789, 826, 847, 902]), light, and system theme support using `next-themes`[cite: 367, 371, 420, 789, 793].
+-   **Landing Page:** A fully branded public marketing page built with `shadcn/ui`[cite: 354, 363, 776, 785], `MagicUI`[cite: 364, 786], `AnimateUI`[cite: 364, 786], and `AceternityUI` [cite: 370] components, introducing FilmFindr's value proposition[cite: 347, 348, 349, 350, 351, 352, 769, 770, 771, 772, 773, 774].
+-   **Dashboard Layout (Basic):** A clean, intuitive layout for the `/dashboard` focusing on the recommendation feed and a watchlist quick view[cite: 359, 360, 781, 782].
+-   **Responsiveness:** Ensure a fully responsive experience across mobile, tablet, and desktop viewports[cite: 369, 390, 421, 578, 791, 965].
+
+---
+
+## 🔄 Phase 2: Social Layer & Enhanced Curation (The "Film-Savvy Friend" [cite: 11, 201, 226, 308, 390, 427, 433, 623, 648, 730, 820, 1010, 1035] Emerges)
+
+**Goal:** Introduce core social interaction features and enhance user curation capabilities, allowing users to express their cinematic identity and engage with a like-minded community. This phase focuses on bringing the **"Playful & Engaging"** [cite: 11, 201, 213, 218, 226, 228, 232, 237, 240, 248, 253, 263, 269, 273, 279, 280, 308, 390, 400, 407, 411, 414, 427, 433, 623, 635, 640, 648, 650, 654, 659, 662, 670, 675, 685, 691, 695, 701, 730, 820, 1010, 1022, 1027, 1035, 1037, 1041, 1046, 1049, 1057, 1062, 1072, 1078, 1082, 1088] and **"Cinematic & Immersive"** [cite: 15, 201, 228, 248, 263, 277, 288, 308, 330, 365, 389, 390, 401, 421, 427, 437, 623, 650, 670, 685, 699, 710, 730, 752, 787, 824, 1010, 1037, 1057, 1072, 1086, 1097] aspects to the forefront.
+
+### 💬 Social Feed & Interactions
+-   **User Posts:** Enable users to post reviews, quick "takes," and screenshots/images with commentary[cite: 227, 373, 375, 649, 795]. The feed will initially be a simple reverse-chronological display, potentially with liked posts surfaced.
+-   **Basic Interactions:** Implement a "like" and comment system for posts[cite: 231, 374, 653, 796]. Introduce early forms of **"Emotional Reaction Tags"** [cite: 118, 231, 505, 540, 618, 653, 927, 1040] as an alternative to simple likes.
+
+### 👤 Profiles & Community
+-   **Public User Profiles:** Launch public profiles showcasing user activity (e.g., recent posts, liked items), basic taste indicators, and follower/following counts[cite: 262, 375, 684, 797].
+-   **Follow System:** Allow users to follow and be followed by others[cite: 235, 375, 657, 797].
+-   **Initial Badging:** Introduce the first set of **"Soft Achievements (Badges & Milestones)"**[cite: 116, 265, 273, 380, 538, 687, 695, 776, 802, 925, 1074, 1082], displayed tastefully on profiles[cite: 265, 275, 687, 697, 1074, 1084].
+
+### 📚 Collections
+-   **User-Created Collections:** Allow users to create, name, and describe themed collections of movies/TV shows (e.g., "My Favorite Horrors," "Best A24 Dramas")[cite: 246, 381, 668, 803].
+-   **Public/Private Collections:** Users can set visibility for their collections[cite: 256, 678].
+-   **Adding Titles:** Users can add any title found within FilmFindr to their collections.
+
+---
+
+## 🚀 Phase 3: Smart Matching & Enhanced AI ("Intelligent Curator" [cite: 7, 202, 308, 321, 390, 427, 429, 624, 743, 816, 1011] Level Up)
+
+**Goal:** Significantly enhance the AI's capabilities for deeper personalization and introduce intelligent social matching features. This phase makes the AI more palpably **"quietly brilliant"** [cite: 8, 203, 308, 321, 395, 430, 625, 743, 817, 1012] and the platform more **"Smart & Insightful"**[cite: 7, 201, 202, 207, 213, 218, 222, 232, 243, 257, 269, 277, 279, 280, 284, 292, 294, 298, 302, 308, 389, 390, 395, 396, 399, 400, 410, 415, 416, 417, 421, 427, 429, 604, 616, 623, 624, 625, 629, 635, 640, 644, 654, 663, 665, 679, 689, 691, 699, 701, 706, 707, 714, 716, 717, 720, 721, 724, 725, 730, 743, 816, 819, 900, 901, 991, 1003, 1010, 1011, 1012, 1016, 1022, 1027, 1031, 1041, 1050, 1052, 1066, 1076, 1078, 1086, 1088, 1093, 1101, 1103, 1104, 1107, 1108, 1111, 1112].
+
+### 🤖 FilmMatch Engine (CineMatch)
+-   **Taste Compatibility:** Implement the **"Taste Matching (CineMatch)"** [cite: 267, 380, 689, 802, 1076] system to recommend users with similar or complementary taste profiles[cite: 268, 690, 1077].
+-   **Compatibility Insights:** Show *why* users might match (e.g., "You both love surreal sci-fi and Studio Ghibli").
+-   **"Watch Together" Suggestions (Conceptual):** Explore UI for suggesting co-viewing based on mutual watchlist items or high taste compatibility (full group watch coordination is later).
+
+### 📈 Recommendations 2.0
+-   **Behavior-Driven AI:** Enhance the recommendation engine to learn from longer-term user behavior, social interactions (reactions, shared collections), and explicit feedback to provide even more nuanced and adaptive suggestions.
+-   **Mood-Based Training:** Utilize explicit mood selections and implicit signals (e.g., reactions to content) to further refine mood-based recommendations and help train the engine, making the UI feel more **"emotionally smart"**[cite: 9, 203, 431, 625, 818, 1012].
+-   **Light-Touch AI Personification:** Introduce subtle UI prompts for AI transparency and trust-building (e.g., "We're tuning your picks based on your recent reviews") as per the branding guide[cite: 10, 188, 211, 432, 610, 633, 819, 997, 1020].
+
+### 🧩 Themed Collections & Quizzes
+-   **Interactive Discovery:** Introduce the **"Themed Collections & Quizzes"** feature [cite: 13, 251, 382, 615, 673, 804, 993, 1002, 1060] allowing users to build watchlists or discover recommendations through engaging, personality-quiz-style interactions.
+
+---
+
+## 🌐 Phase 4: Streaming Ecosystem & Platform Tools ("The Universal Remote" [cite: 292, 714, 1101])
+
+**Goal:** Fully integrate FilmFindr into the broader streaming ecosystem, providing comprehensive "Where to Watch" data, platform comparison tools, and initial external integrations. This phase focuses on maximizing user convenience and FilmFindr's utility as the central hub for viewing decisions.
+
+### 🎞️ Comprehensive Streaming Data
+-   **Live "Where to Watch":** Integrate with streaming availability APIs to provide real-time, accurate data for every title across a wide range of services (subscription, rent, buy)[cite: 221, 292, 384, 643, 715, 806, 1030, 1102].
+-   **Price & Quality Comparisons:** Implement tools to compare rental/purchase prices and available streaming quality (SD, HD, 4K) across platforms[cite: 297, 385, 719, 807, 1007, 1106].
+
+### 📅 Full Release Tracking & Notifications
+-   **Enhanced Calendar & Notifications:** Full implementation of the **"Release Tracking (The Premiere Calendar)"** [cite: 277, 383, 699, 805, 1086] module, including the rich calendar view [cite: 287, 290, 383, 709, 712, 805, 1096, 1099] and smart notification system[cite: 283, 286, 383, 705, 708, 805, 1092, 1095].
+
+### 🔌 Initial Integration Tools
+-   **Push Notifications:** Implement robust, customizable push notifications for key events (new releases, social interactions, new high-match recommendations).
+-   **Watch Party Coordination (Basic):** Introduce initial features to help users coordinate viewing times for films/shows with friends they are connected with on the platform (e.g., suggesting common free slots based on calendar integration - full sync is later).
+-   **Chrome Extension (Begin Development):** Start development of the Chrome extension for syncing viewing history and enabling FilmFindr interactions on streaming sites[cite: 301, 385, 723, 807, 1011, 1110].
+
+---
+
+This roadmap outlines our strategic priorities for FilmFindr's development. While minor adjustments may occur based on user feedback and development insights, major feature additions or significant shifts in phasing will be updated in this document and reflected in the `filmfindr-modules.mdc`[cite: 201, 306, 372, 794, 1010]. Our commitment is to iteratively build towards the full FilmFindr vision, delivering a truly exceptional experience for film and TV lovers.

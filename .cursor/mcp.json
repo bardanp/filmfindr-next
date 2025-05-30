@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "shadcn-ui": { "command": "npx", "args": ["-y", "shadcn@canary", "registry:mcp"], "env": { "REGISTRY_URL": "https://registry.shadcn.dev" } },
+    "animate-ui": { "command": "npx", "args": ["-y", "shadcn@canary", "registry:mcp"], "env": { "REGISTRY_URL": "https://animate-ui.com/r/registry.json" } },
+    "magicui": { "command": "npx", "args": ["-y", "shadcn@canary", "registry:mcp"], "env": { "REGISTRY_URL": "https://ui.aceternity.com/registry.json" } },
+    "aceternity-ui": { "command": "npx", "args": ["-y", "shadcn@canary", "registry:mcp"], "env": { "REGISTRY_URL": "https://ui.aceternity.com/registry.json" } }
+  }
+}

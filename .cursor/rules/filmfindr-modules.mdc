@@ -1,0 +1,168 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# 🧱 FilmFindr – Core Feature Modules
+
+**FilmFindr is architected as a suite of interconnected modules, each designed to deliver on our core promise: eliminating decision fatigue and providing users with "delightful relief" through a trusted, stylish, and intelligent guide to the world of film and TV.** These modules work in concert to manifest FilmFindr's unique brand personality – Smart & Insightful, Playful & Engaging, Cinematic & Immersive, and Modern & Stylish.
+
+---
+
+## 🧠 AI Discovery Engine (The Intelligent Curator)
+
+The AI Discovery Engine is the heart of FilmFindr, embodying our **"Smart & Insightful (Intelligent Curator)"** personality. It's designed to be **quietly brilliant**, providing users with hyper-personalized recommendations that feel intuitive and emotionally smart, rather than overtly technical. The goal is to make users feel understood and effortlessly guided.
+
+-   **Smart Recommendations**
+    -   **Elaboration:** The AI generates deeply personalized movie and TV suggestions that go beyond basic genre matches. It analyzes viewing history, explicit preferences (ratings, saved items), implicit signals (completion rates, time of day viewing), and selected moods to build a nuanced taste profile for each user.
+    -   **Brand Alignment:** Smart & Insightful, Modern & Stylish (seamless integration).
+    -   **User Experience:** Users feel "understood" as recommendations are surprisingly accurate and resonate with their current state of mind. The discovery process feels like receiving a tip from a trusted friend who "gets" them.
+    -   **Key UI/UX Elements:** Recommendations are presented with **"Cinematic Reveal Animations"** (subtle fades, scale reveals) making each suggestion feel like a "mini-premiere." AI reasoning can be accessed via opt-in prompts like "See why we picked this?" using light-touch personification.
+
+-   **Genre, Mood, Time Filtering**
+    -   **Elaboration:** Users can intuitively refine recommendations based on their current mood (e.g., "Cozy," "Need a Laugh," "Intellectual Stimulation"), available time ("Quick Flick: <90min," "Feature Length," "Weekend Binge"), and preferred genres/sub-genres.
+    -   **Brand Alignment:** Smart & Insightful (understanding emotional context), Modern & Stylish (elegant filter UI), Playful & Engaging (mood selection).
+    -   **User Experience:** Empowers users to quickly narrow down choices in a way that feels natural and tailored to their immediate needs, providing "delightful relief."
+    -   **Key UI/UX Elements:** Features the **"Mood-Based Discovery UI"** with animated chips, stylized emojis, or abstract shapes (using `pink-accent` sparingly). Time and genre filters are elegant, possibly using subtle sliders or beautifully designed segmented controls, avoiding a cluttered feel.
+
+-   **Trending Prediction & "Hidden Gem" Spotting**
+    -   **Elaboration:** The AI forecasts not just mainstream trending titles but also "emerging gems" popular within specific taste communities on FilmFindr or content that aligns with a user's early signals of unique taste.
+    -   **Brand Alignment:** Smart & Insightful, Playful & Engaging (the joy of discovery).
+    -   **User Experience:** Users feel ahead of the curve, like they're part of an inner circle discovering unique and exciting content.
+    -   **Key UI/UX Elements:** Dedicated sections like "Rising Fast" or "Gems You Might Love" with distinct, stylish visual treatment (e.g., subtle `gold-accent` highlights or unique card designs).
+
+-   **Platform Discovery (Where to Watch)**
+    -   **Elaboration:** Clearly and accurately displays where any recommended film or show is available to stream, rent, or buy, with direct links where possible. This is kept up-to-date.
+    -   **Brand Alignment:** Modern & Stylish (convenience, efficiency), Smart & Insightful (practical help).
+    -   **User Experience:** Effortless, time-saving, and removes the friction of cross-platform searching.
+    -   **Key UI/UX Elements:** Clean, unobtrusive display of streaming service logos alongside titles. Seamless integration with the "Streaming Integration" module.
+
+---
+
+## 💬 Social Platform (The Film-Savvy Friend)
+
+This module brings the **"Playful & Engaging (Film-Savvy Friend)"** personality to life, fostering a vibrant community for users to share their passion for film and TV in an expressive and emotionally attuned way. The experience should feel like "flipping through a beautifully curated zine" or hanging out with like-minded cinephiles.
+
+-   **Posting Feed (Reviews, Takes, & Curated Shares)**
+    -   **Elaboration:** Users can post rich media content: in-depth reviews, quick "hot takes," screenshots with commentary, quotes, links to articles, or user-generated "mood boards" for films. Future iterations may include short clip sharing.
+    -   **Brand Alignment:** Playful & Engaging, Modern & Stylish, Cinematic & Immersive (content is about film).
+    -   **User Experience:** Users feel empowered to express their cinematic identity and engage in meaningful discussions. The feed feels curated and high-quality, not noisy.
+    -   **Key UI/UX Elements:** Posts are displayed as elegant cards adhering to **"Cinematic Minimalism with Personality."** Focus on beautiful typography and image presentation.
+
+-   **Interactions (Emotional Reactions & Dialogue)**
+    -   **Elaboration:** Beyond standard likes and comments, users can react to posts and films using **"Emotional Reaction Tags"** (e.g., "Devastated 😭", "Iconic 🎬", "Underrated Gem 💎", "Masterpiece ✨"). Comments support threaded discussions.
+    -   **Brand Alignment:** Playful & Engaging (expressive), Smart & Insightful (emotionally attuned).
+    -   **User Experience:** Interactions feel more nuanced, personal, and reflective of the emotional impact of film.
+    -   **Key UI/UX Elements:** Custom-designed reaction icons/tags, possibly using `pink-accent` or other expressive accents, presented in a clean, non-intrusive way.
+
+-   **Follows and Activity Stream**
+    -   **Elaboration:** Users can follow other users (friends, curators, critics). The activity stream highlights meaningful actions like reviews, new collection shares, or significant recommendations from followed users, avoiding overwhelming noise.
+    -   **Brand Alignment:** Playful & Engaging, Modern & Stylish.
+    -   **User Experience:** Fosters a sense of connection and aids content discovery through trusted peers and tastemakers.
+    -   **Key UI/UX Elements:** A dedicated, filterable activity section with clear, concise updates. Profile summaries for followed users.
+
+---
+
+## 📚 Watchlists & Collections (The Personal Archive)
+
+This module empowers users to curate their media identity and organize their viewing journey, blending the **"Smart & Insightful"** capabilities of AI with **"Playful & Engaging"** self-expression.
+
+-   **Smart Watchlist**
+    -   **Elaboration:** More than a static list, the AI subtly helps manage and prioritize the user's watchlist. It can suggest what to watch next based on current mood, items recently added, titles about to leave a streaming service the user has, or genre balance.
+    -   **Brand Alignment:** Smart & Insightful, Modern & Stylish.
+    -   **User Experience:** The watchlist feels dynamic, helpful, and less overwhelming, aiding in the "delightful relief" from decision fatigue.
+    -   **Key UI/UX Elements:** Clean list interface with smart sorting options and subtle AI-driven nudges or highlights (e.g., "Great for your current 'Cozy' mood!").
+
+-   **Collections (Curated Sets & "Digital Zines")**
+    -   **Elaboration:** Users can create, name, describe, and share themed collections (e.g., "My Top 10 Dystopian Futures," "Hidden Gem Documentaries," "Perfect Rainy Day Movies"). They can add custom cover visuals that nod to movie poster aesthetics.
+    -   **Brand Alignment:** Playful & Engaging (self-expression), Cinematic & Immersive (curated, themed content).
+    -   **User Experience:** A fun, creative outlet for users to express their unique taste and share their film knowledge like a "beautifully curated zine."
+    -   **Key UI/UX Elements:** Visually appealing collection pages with customizable headers. Integration with **"Themed Collections & Quizzes"** feature for auto-generating starter collections.
+
+-   **Collaborative Lists**
+    -   **Elaboration:** Users can invite friends to co-curate watchlists or collections, with real-time updates and an activity log showing contributions.
+    -   **Brand Alignment:** Playful & Engaging, Modern & Stylish (seamless collaboration).
+    -   **User Experience:** Enhances social connection and shared discovery, perfect for planning group viewings or exchanging recommendations with close friends.
+    -   **Key UI/UX Elements:** Clear indicators of shared ownership, easy invitation flow, and real-time syncing.
+
+-   **Private/Public Modes**
+    -   **Elaboration:** Granular privacy controls allow users to set visibility for each watchlist and collection (Private, Friends Only, Public).
+    -   **Brand Alignment:** Modern & Stylish (user control), Smart & Insightful (respecting privacy).
+    -   **User Experience:** Users feel in control of their data and how their curations are shared.
+    -   **Key UI/UX Elements:** Clear, intuitive toggles for visibility settings.
+
+---
+
+## 🧑‍🤝‍🧑 Profiles & Matching (The Cinematic Identity)
+
+User profiles are more than just a list of stats; they are a canvas for users to express their **"Cinematic Identity."** This module facilitates connection and discovery through shared tastes, enhanced by "soft achievements" and smart matching.
+
+-   **User Profiles**
+    -   **Elaboration:** Profiles showcase a user's recently watched/rated content, top genres, common mood patterns, public collections, followers/following, and earned "soft achievement" badges.
+    -   **Brand Alignment:** Modern & Stylish, Playful & Engaging, Cinematic & Immersive.
+    -   **User Experience:** Profiles are a rich reflection of a user's cinematic taste and journey, inviting connection and discovery.
+    -   **Key UI/UX Elements:** Adheres to **"Cinematic Minimalism with Personality."** Features a tasteful, elegant display of **"Soft Achievements (Badges & Milestones)"** possibly using `gold-accent`. Visualizations of taste preferences (e.g., subtle radar charts for genres).
+
+-   **Taste Matching (CineMatch)**
+    -   **Elaboration:** AI automatically identifies and suggests other users or communities with highly similar or interestingly complementary taste profiles. Goes beyond a simple percentage match, offering insights like "You and [User] both champion underrated 70s sci-fi and modern A24 horror."
+    -   **Brand Alignment:** Smart & Insightful, Playful & Engaging.
+    -   **User Experience:** A delightful way to discover new "film-savvy friends" or content curators whose recommendations are likely to resonate.
+    -   **Key UI/UX Elements:** Stylish presentation of user matches with visual cues representing taste overlap. Opt-in to connect or follow.
+
+-   **Badging System (Soft Achievements)**
+    -   **Elaboration:** Users earn tasteful, expressive badges for milestones like "First Review Posted," "Cult Classic Curator" (e.g., after curating 5 indie films), "Streaming Polyglot" (for watching content from 3+ different platforms via FilmFindr's tracking), "Mood Maestro" (for frequently using mood-based discovery).
+    -   **Brand Alignment:** Playful & Engaging, Modern & Stylish.
+    -   **User Experience:** A fun, subtle form of recognition that adds personality and a sense of accomplishment without being overly gamified.
+    -   **Key UI/UX Elements:** Elegantly designed digital badges displayed on profiles, potentially using `gold-accent` and custom Lucide-based icons.
+
+---
+
+## 📆 Release Tracking (The Premiere Calendar)
+
+This module ensures users stay ahead of the curve on new and upcoming releases, transforming release tracking into an exciting part of their cinematic journey. It aligns with **"Smart & Insightful"** and the **"Cinematic & Immersive"** feeling of anticipating a premiere.
+
+-   **Followable Releases**
+    -   **Elaboration:** Users can follow specific movies, TV shows, franchises, directors, actors, or even studios to get updates on their upcoming releases.
+    -   **Brand Alignment:** Smart & Insightful, Playful & Engaging.
+    -   **User Experience:** Users feel connected and informed, ensuring they never miss content they care about.
+    -   **Key UI/UX Elements:** Easy "Follow" buttons on entity pages. A dedicated "Followed Releases" section in their profile or dashboard.
+
+-   **Smart Notification System**
+    -   **Elaboration:** Users receive timely and relevant notifications, such as "Title X you follow is releasing next week," "[Followed Director]'s new film just dropped a trailer," or "Title Y is now available on a streaming service you're tracking."
+    -   **Brand Alignment:** Smart & Insightful, Modern & Stylish.
+    -   **User Experience:** Notifications feel like helpful, personalized updates from their "intelligent guide," not spam.
+    -   **Key UI/UX Elements:** Customizable notification preferences. Clean, unobtrusive in-app notifications and opt-in push notifications.
+
+-   **Calendar View**
+    -   **Elaboration:** A visually engaging calendar displaying upcoming theatrical releases, streaming premieres, and home media releases for content the user follows or that aligns with their taste profile. Filterable by type, platform, etc.
+    -   **Brand Alignment:** Modern & Stylish, Cinematic & Immersive.
+    -   **User Experience:** Provides a clear, exciting overview of what's on the horizon, like a personal premiere schedule.
+    -   **Key UI/UX Elements:** Elegant calendar interface, possibly incorporating small poster art or relevant icons. Potential for iCal integration in the future.
+
+---
+
+## 🎞 Streaming Integration (The Universal Remote)
+
+This module provides critical utility by helping users navigate the fragmented streaming landscape, reinforcing FilmFindr's role as the central, **"Modern & Stylish"** hub for all viewing decisions.
+
+-   **Where to Watch (Consolidated & Accurate)**
+    -   **Elaboration:** Provides comprehensive, real-time information on which streaming platforms (subscription, rent, buy) host a specific title. Accuracy and timeliness are paramount. Includes deep-linking to the title on the respective platform.
+    -   **Brand Alignment:** Smart & Insightful, Modern & Stylish.
+    -   **User Experience:** Offers immediate, practical value, saving users time and frustration. Core to "eliminating decision fatigue."
+    -   **Key UI/UX Elements:** Clear, concise display of service logos with availability status. Updated frequently.
+
+-   **Comparison Tools**
+    -   **Elaboration:** For titles available on multiple platforms for rental or purchase, FilmFindr can display price comparisons, available quality (SD, HD, 4K), and any differences in included extras.
+    -   **Brand Alignment:** Smart & Insightful, Modern & Stylish.
+    -   **User Experience:** Empowers users to make cost-effective and quality-conscious viewing choices.
+    -   **Key UI/UX Elements:** Simple, easy-to-scan comparison table or info display within the title's page.
+
+-   **Extension Support *(Future Enhancement)***
+    -   **Elaboration:** A browser extension (e.g., Chrome) could allow users to sync their viewing history from various streaming services directly into FilmFindr, rate content directly on a streaming site with that rating appearing in FilmFindr, or quickly add a title discovered elsewhere to their FilmFindr watchlist.
+    -   **Brand Alignment:** Smart & Insightful, Modern & Stylish.
+    -   **User Experience:** Extends FilmFindr's convenience and intelligence seamlessly into the user's broader web Browse and streaming habits.
+
+---
+
+These core modules, when developed in alignment with the FilmFindr Branding Guidelines, will collectively create an application that is not only highly functional but also a delight to use, truly becoming the user's indispensable, intelligent guide to the world of film and TV. Phased release and iteration will be guided by the `filmfindr-roadmap.mdc`.

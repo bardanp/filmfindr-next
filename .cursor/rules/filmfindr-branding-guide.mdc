@@ -1,0 +1,335 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+title: filmfindr-branding-guide
+scope: project
+version: 2.0
+lastUpdated: 2025-05-29
+---
+
+# 🎨 FilmFindr – Comprehensive Branding Guidelines
+
+**Welcome to the FilmFindr brand guide\!** This document outlines the core principles of our visual identity, logo usage, typography, color palette, and overall design language. FilmFindr is designed to eliminate decision fatigue in streaming by delivering highly personalized, AI-powered movie and TV recommendations that adapt to your mood, taste, and social context. Our goal is to provide users with a feeling of **delightful relief**—the experience of finally finding a trusted, stylish, and intelligent guide in the chaotic world of streaming.
+
+Adhering to these guidelines will ensure a consistent, recognizable, and engaging experience for all FilmFindr users across every touchpoint.
+
+-----
+
+## 🎯 Brand Personality
+
+FilmFindr's personality is the emotional and human-like connection we forge with our users. It should be consistently expressed in our design, communication, and overall user experience.
+
+  - **Smart & Insightful (The Intelligent Curator)**:
+
+      - FilmFindr leverages sophisticated AI to provide tailored, genuinely helpful, and surprisingly accurate recommendations. The intelligence is primarily felt through the quality of these suggestions – it's **quietly brilliant**.
+      - The UI should feel intuitive, responsive, and "emotionally smart," understanding moods and nuances without requiring complex input or displaying overt technical jargon.
+      - It's a **trusted guide**, subtly present and always working in the user's favor, much like Spotify's Discover Weekly rather than an intrusive assistant.
+
+  - **Playful & Engaging (The Film-Savvy Friend)**:
+
+      - FilmFindr encourages discovery and social interaction in a way that is fun, expressive, and emotionally attuned. The experience should feel like flipping through a beautifully curated zine or chatting with an enthusiastic, film-savvy friend.
+      - Playfulness is sophisticated, infused into interactions like mood-based discovery, themed collection quizzes, and subtle "soft achievements." It avoids cartoonish or overly gamified elements.
+      - Engagement comes from making content discovery itself a "mini-premiere" moment and fostering a sense of community through shared experiences and expressive reactions.
+
+  - **Cinematic & Immersive (The Modern Picture House)**:
+
+      - The FilmFindr experience evokes the magic and artistry of cinema. This is achieved through a **"Cinematic Minimalism with Personality"** visual style.
+      - A dark mode aesthetic is preferred, creating an immersive, theater-like feel, complemented by hero imagery that nods to classic movie posters or thoughtfully curated playlists.
+      - The style draws inspiration from A24's visual minimalism and the atmospheric UIs of apps like Letterboxd or select cinematic sci-fi (e.g., *Her*, *Blade Runner 2049* – toned down for usability).
+
+  - **Modern & Stylish (The Elegant Guide)**:
+
+      - FilmFindr utilizes a clean, spacious, and uncluttered layout that is responsive and prioritizes a seamless mobile-first experience. The UI feels fresh, current, and aesthetically pleasing.
+      - Elegance is key, reflected in typography, subtle motion, and the overall polish of the interface. It's about "futuristic but friendly" design that feels both advanced and approachable.
+      - The brand avoids sterile minimalism, outdated retro styles, or cluttered dashboard-like interfaces, ensuring the focus remains on a curated and delightful Browse experience.
+
+-----
+
+## 📘 Logo & Usage
+
+Our logo is the primary visual identifier for FilmFindr. Consistent and correct usage is paramount.
+
+  - **Primary Logo**: The icon features a stylized robot head combined with a film reel motif for the face.
+
+      - *Visual Placeholder: [Link to Primary Logo Asset - e.g., filmfindr\_logo\_primary.svg]*
+      - *Visual Placeholder: [Link to Logo Variations - e.g., monochrome\_light.svg, monochrome\_dark.svg]*
+
+  - **Clearspace**:
+
+      - Always maintain a minimum clearspace around the logo. This area should be free of other text, graphics, or busy patterns.
+      - The minimum clearspace should be equivalent to 25% of the logo's width on all sides.
+
+  - **Minimum Size**:
+
+      - To ensure legibility, the logo should not be used at a width smaller than 32px in digital applications.
+
+  - **Placement & Backgrounds**:
+
+      - Preferred backgrounds: `bg-background` (dark mode) or `bg-muted/30`.
+      - On dark backgrounds, use the appropriate monochrome light version of the logo.
+      - On light backgrounds (if an alternative light theme is developed), use the primary or monochrome dark version.
+      - Avoid placing the logo on overly complex or low-contrast backgrounds without proper containment (e.g., a card element).
+
+  - **Logo Misuse (Don'ts)**:
+
+      - Do not stretch, condense, or alter the logo's proportions.
+      - Do not recolor the logo outside of its defined variations.
+      - Do not rotate or tilt the logo.
+      - Do not apply filters, drop shadows, or other visual effects not specified in this guide.
+      - Do not use outdated versions of the logo.
+
+-----
+
+## 🎨 Color Palette (Tailwind Tokens)
+
+Our color palette supports a "Cinematic Minimalism with Personality," emphasizing a dark mode aesthetic with vibrant, controlled accents. It's designed to be modern, accessible, and reflective of our brand.
+
+**Primary Theme: Dark Mode (Default & Recommended)**
+
+  * Evokes a cinematic, immersive experience, is easier on the eyes for evening use, and feels modern and sleek.
+
+| Use Case                     | Token                                  | HEX (Example - define actuals) | Notes                                                                 |
+|------------------------------|----------------------------------------|--------------------------------|-----------------------------------------------------------------------|
+| **Core UI (Dark Theme)** |                                        |                                |                                                                       |
+| Background (App Default)     | `bg-background`                        | `~#0A0A0C` (e.g., near-black)  | Deep, dark base for immersion.                                        |
+| Surface/Card Background      | `bg-card`                              | `~#141418` (e.g., dark grey)   | Slightly lighter than base for cards, modals, distinct UI surfaces.     |
+| Borders                      | `border-border`                        | `~#27272A` (e.g., subtle dark) | Subtle definition for elements.                                       |
+| **Text (Dark Theme)** |                                        |                                |                                                                       |
+| Text (Default)               | `text-foreground`                      | `~#E4E4E7` (e.g., light grey)  | Primary, highly legible text.                                         |
+| Text (Muted)                 | `text-muted-foreground`                | `~#A1A1AA` (e.g., grey)        | Secondary text, placeholders, hints.                                  |
+| Text (On Accent)             | `text-primary-foreground`              | `~#FFFFFF`                     | For text on vivid accent color backgrounds.                           |
+| **Base Accents (Subtle)** |                                        |                                | Used for UI elements, backgrounds, subtle gradients.                  |
+| Soft Purple                  | `bg-purple-subtle` / `text-purple-subtle` | `~#3A305A` (e.g.)              | Used for subtle highlights or background tones.                       |
+| Deep Blue                    | `bg-blue-deep` / `text-blue-deep`      | `~#283563` (e.g.)              | Can be used for larger colored surfaces or atmospheric elements.      |
+| Neutral Tones                | `bg-neutral-soft` / `text-neutral-soft`| `~#3F3F46` (e.g., warm grey)   | For secondary UI elements, dividers.                                  |
+| **Vibrant Accents (Controlled Use)** |                                |                                | Used sparingly for specific interactions, tags, highlights.         |
+| Vivid Pink (Mood Tags)       | `bg-pink-accent` / `text-pink-accent`  | `~#EC4899` (pink-500)          | For mood tags, expressive reactions, key playful elements.            |
+| Bright Gold (Highlights)     | `bg-gold-accent` / `text-gold-accent`  | `~#F59E0B` (amber-500)         | For "soft achievement" highlights, premium callouts, or star ratings. |
+| Primary Interactive Accent   | `bg-primary` / `text-primary`          | `~#8B5CF6` (violet-500)        | Main interactive elements like buttons, active states.                |
+| **Gradients** |                                        |                                | Subtle, for mood shifts or atmospheric depth.                         |
+| Mood Gradient Example        | `from-purple-subtle to-blue-deep/70`   | `N/A`                          | Example for background elements.                                      |
+| CTA Gradient                 | `from-primary via-pink-accent/70 to-gold-accent/60` | `N/A`            | Energetic but sophisticated for major CTAs.                           |
+| **Semantic States** |                                        |                                | Standard states, ensure contrast on dark backgrounds.                 |
+| Success                      | `bg-success` / `text-success`          | `~#22C55E` (green-500)         | Confirmations, positive feedback.                                     |
+| Warning                      | `bg-warning` / `text-warning`          | `~#FACC15` (yellow-400)        | Non-critical alerts.                                                  |
+| Error                        | `bg-error` / `text-error`              | `~#EF4444` (red-500)           | Critical alerts, error messages.                                      |
+| Info                         | `bg-info` / `text-info`                | `~#3B82F6` (blue-500)          | Informational messages.                                               |
+
+*Note: Example HEX codes are illustrative. Define specific HEX values in your Tailwind configuration. Ensure sufficient contrast for accessibility. The app should respect user system themes where appropriate but aim to guide towards the dark theme for the optimal FilmFindr experience.*
+
+-----
+
+## 🅰 Typography
+
+Elegant, clean, and highly legible typography is essential to FilmFindr's "Cinematic Minimalism with Personality" and its role as a "stylish guide."
+
+  - **Primary Typeface**: **Inter** (sans-serif)
+
+      - Sourced via `@next/font/google`.
+      - Chosen for its modern aesthetic, excellent screen readability across weights and sizes, and its neutral yet friendly character.
+
+  - **Font Weights (Tailwind Classes)**:
+
+      - Regular: `font-normal` (400) - For body copy, descriptions.
+      - Medium: `font-medium` (500) - For UI labels, subheadings, emphasized text.
+      - Semi-Bold: `font-semibold` (600) - For card titles, important callouts, interactive elements.
+      - Bold: `font-bold` (700) - For primary headlines (H2, H3).
+      - Extra-Bold/Black: `font-extrabold` (800) or `font-black` (900) - Sparingly for impactful hero titles (H1) or major section headers.
+
+  - **Sizing Scale & Hierarchy (Tailwind Classes)**: A clear hierarchy guides the user and enhances readability.
+
+      - Hero Titles (H1): `text-5xl` / `text-6xl` (responsive, e.g., `md:text-6xl`)
+      - Section Headers (H2): `text-3xl` / `text-4xl`
+      - Sub-Headers (H3): `text-2xl`
+      - Card Titles / Important Labels: `text-xl` / `text-lg`
+      - Paragraphs / Body Copy: `text-base` (primary) or `text-lg` (for lead paragraphs or more spacious layouts).
+      - Captions / Helper Text / Tags: `text-sm`
+      - Micro Text / Legal: `text-xs`
+
+  - **Line Height (Leading - Tailwind Classes)**:
+
+      - Headings: `leading-tight` or `leading-snug` (e.g., `1.2` to `1.3`)
+      - Body Text: `leading-relaxed` (e.g., `1.6` to `1.7`) for optimal readability.
+
+  - **Letter Spacing (Tracking - Tailwind Classes)**:
+
+      - Generally use default tracking (`tracking-normal`).
+      - Slightly tighter tracking (`tracking-tight`) can be used for larger headlines to improve visual appeal, if needed.
+      - Slightly looser tracking (`tracking-wide`) can be considered for all-caps subheadings or tags if it enhances legibility.
+
+-----
+
+## 🧩 Iconography
+
+Icons in FilmFindr are intuitive, feel "smart" but not generic, and align with the "Cinematic Minimalism with Personality" style. They are functional, expressive, and subtly enhance the user experience.
+
+  - **Li use **lucide-react** icons.
+      - *Reference: [https://lucide.dev/](mdc:https:/lucide.dev)*
+  - **Style**: Clean, modern lines with consistent stroke widths. Icons should be instantly recognizable.
+  - **Sizing (Tailwind Classes)**:
+      - Inline with text, minor actions: `h-4 w-4` (`text-sm` equivalent) or `h-5 w-5` (`text-base` equivalent).
+      - Buttons, navigation, tags: `h-5 w-5` or `h-6 w-6`.
+      - Feature Icons / Empty States / Mood Selectors: `h-8 w-8` or `h-10 w-10`, context-dependent.
+  - **Color**:
+      - Default: Inherit `currentColor` to match surrounding text (e.g., `text-muted-foreground` for subtle icons, `text-foreground` for more prominent ones).
+      - Active/Interactive: Use `text-primary` or a specific vibrant accent (e.g., `text-pink-accent` for active mood filter).
+      - Semantic: Use corresponding semantic colors (e.g., `text-success`, `text-error`).
+  - **Mood-Based Discovery Icons/Elements**:
+      - Can be stylized Lucide icons (e.g., `Smile`, `CloudRain`, `Coffee` for moods) or abstract shapes/animated chips.
+      - If using emojis or custom visuals for moods, ensure they are stylistically consistent (e.g., subtle, not overly cartoonish) and use accent colors like `pink-accent`.
+  - **Soft Achievement Badges**:
+      - Designs should be tasteful, elegant, and expressive, potentially combining a Lucide icon with a subtle shape or border in `gold-accent`. They are not meant to feel like game achievements.
+  - **Emotional Reaction Tags**:
+      - Combine a relevant Lucide icon or a refined emoji with short text (e.g., `Heart` + "Loved it\!", `ThumbsDown` + "Not for me", `Gem` + "Hidden Gem\!", `Flame` + "Hot Take\!"). Use `pink-accent` or other expressive accent colors sparingly.
+  - **Usage Examples (Lucide)**:
+      - AI/Recommendations: `Sparkles`, `Wand2`, `Brain`, `Lightbulb`
+      - Watchlist/Collections: `Bookmark`, `ListPlus`, `Heart`, `Album`, `FolderKanban`
+      - Social/Community: `Users`, `MessageCircle`, `ThumbsUp`, `Share2`
+      - Navigation: `ChevronLeft`, `ChevronRight`, `X`, `Menu`, `MoreHorizontal`
+      - Controls: `PlayCircle`, `PauseCircle`, `FastForward`, `Rewind`, `Volume2`, `Settings2`
+      - Search/Filter: `Search`, `Filter`, `SlidersHorizontal`
+      - Profile/Account: `UserCircle2`, `ShieldCheck`
+
+-----
+
+## ✨ Component & Animation Style
+
+FilmFindr's components and animations embody "Cinematic Minimalism with Personality" and the "futuristic but friendly" AI feel. They are fluid, purposeful, and enhance the "delightful relief" users experience.
+
+  - **UI Libraries & Integration**:
+
+      - Core UI structure and base components are sourced from **`shadcn/ui`**.
+      - Enhanced interactivity, animations, and unique visual effects are achieved using components from **`MagicUI`**, **`Aceternity UI`**, and **`AnimateUI`**.
+      - Components from these libraries are integrated into the project by adding their source code directly (e.g., via a CLI like `shadcn/ui`, or by manual placement into the `/components` directory), allowing for full customization. Ensure proper import paths (e.g., `@/components/magicui/shimmer-button`, `@/components/animate-ui/effects/motion-effect`) are used in implementation files.
+
+  - **Interaction Principles**:
+
+      - **Feedback**: Subtle hover and focus states (`transition-all duration-200 ease-in-out` or `duration-300`). Active states are clearly indicated, often using `bg-primary` or accent colors.
+      - **Responsiveness**: Interfaces feel "alive" and instantly responsive to user input.
+      - **Polish & Intention**: Interactions feel deliberate and refined, avoiding abruptness.
+
+  - **Animation Guidelines**:
+
+      - **Framework**: Utilize **Framer Motion** for sophisticated and performant animations, especially for `AnimateUI` components like `MotionEffect`.
+      - **Entrance Animations**: Introduce elements gracefully to create "mini-premiere" moments for recommendations or important content.
+          - Use `MotionEffect` (from `AnimateUI`) for effects like fade-in, slide-in from bottom/side.
+          - Employ `BlurFade` (MagicUI) or `TextGenerateEffect` (Aceternity UI) for impactful text reveals.
+          - Animations should be quick (e.g., 0.3s - 0.7s) and purposeful, not distracting.
+      - **Mood-Based UI Elements**:
+          - Animated chips, emojis, or abstract shapes for mood selection can use subtle morphing, shimmering, or scaling effects on selection/hover (`pink-accent` can be used here).
+      - **Cinematic Reveals**: For recommendations, use opacity fades, gentle scaling, or staggered reveals to make discovery feel special.
+      - **Transitions**: Page and state transitions should be smooth, potentially using subtle shared layout animations or fades. Soft glows or lighting effects can accompany key transitions or highlight active elements.
+      - **Microinteractions**: Small, delightful animations for actions like saving to a watchlist, posting a review, or reacting socially. These should be quick and non-intrusive.
+      - **AI Feedback (Subtle)**:
+          - If the AI's presence is made slightly more visible (e.g., "We’re tuning your picks..."), this can be accompanied by a subtle loading indicator or a gentle pulse animation.
+      - **Loading States**: Use elegant skeletons (matching the dark theme), custom on-brand spinners (e.g., a stylized film reel or a pulsating `Sparkles` icon from Lucide), or shimmer effects (`ShimmerButton` from MagicUI can inspire this).
+      - **Backgrounds**:
+          - Dynamic backgrounds like `WavyBackground` or `SparklesCore` (Aceternity UI) should be used judiciously for hero sections or distinct areas, ensuring they don't impede readability or performance.
+          - Subtle gradients that shift based on selected mood or time of day can enhance immersion.
+
+  - **Playful Yet Stylish Interactions (Examples)**:
+
+      - **Swipeable Stacks (Mobile):** If used, ensure smooth, physics-based animations with "polish and intention."
+      - **Trailer Previews:** Dynamic mood tag overlays (`pink-accent`, `gold-accent`) can fade in/out smoothly.
+
+  - **Avoid**:
+
+      - Exaggerated, cartoonish, or overly bouncy animations.
+      - Distracting sound effects or unnecessary popups.
+      - Animations that hinder performance or slow down user interaction.
+
+-----
+
+## 🖼️ Imagery & Visuals
+
+FilmFindr's imagery contributes to its "Cinematic Minimalism with Personality" and immersive feel.
+
+  - **Style**: High-quality, evocative, and thematically relevant. Images should align with the mood or genre of the content they represent, or the curated nature of FilmFindr.
+  - **Movie Posters & Stills**:
+      - Use official, high-resolution assets whenever possible. Maintain correct aspect ratios.
+      - Consider subtle treatments like a slight desaturation or a soft dark overlay to ensure text legibility when used as backgrounds, aligning with the dark mode aesthetic.
+  - **Hero Imagery / Backgrounds**:
+      - Can be abstract, atmospheric visuals (inspired by light play, film grain subtly, or mood gradients) or stylized representations of movie posters/curated playlists.
+      - Should complement the UI, not overpower it. A24-style minimalism can be an inspiration.
+  - **Illustrations (If Used)**:
+      - If illustrations are introduced (e.g., for onboarding, empty states, "soft achievement" badges), they must be modern, elegant, and stylistically consistent with the "futuristic but friendly" and "cinematic minimalist" vibe. Avoid cartoonish or overly simplistic styles.
+      - *Placeholder: [Link to Illustration Style Guide / Examples if developed]*
+  - **Avoid**: Generic stock photos, low-resolution or pixelated images, visuals that clash with the dark, moody, and sophisticated aesthetic.
+
+-----
+
+## 📐 Layout & Spacing
+
+The layout in FilmFindr is clean, spacious, and guided by a smart visual hierarchy, reinforcing the "Cinematic Minimalism with Personality" and ensuring a focus on curated content rather than a cluttered dashboard.
+
+  - **Responsive Design**: A mobile-first approach is paramount. Layouts must adapt gracefully and intuitively to all screen sizes, from mobile to large desktop displays.
+  - **Grid System**: Utilize a flexible grid system (e.g., CSS Grid, Flexbox) to structure content logically and maintain consistency.
+  - **Spacing Scale (Tailwind)**: Adhere to a consistent spacing scale (e.g., multiples of 4px or 8px via Tailwind's default scale: `p-2`, `m-4`, `gap-6`).
+      - **Generous White Space (Negative Space)**: Crucial for the minimalist aesthetic. Use ample spacing around elements to improve readability, focus, and create a sense of calm and elegance. This helps reduce cognitive load and supports the "delightful relief" emotion.
+  - **Visual Hierarchy**: Clearly differentiate elements through size, weight, color, and spacing (as defined in Typography and Color Palette). Users should instinctively understand the importance and relationship of different UI components.
+  - **Content Focus**: Layouts should prioritize content discovery. Movie posters, titles, and key information should be prominent. UI controls should be accessible but not distracting.
+  - **Curated Feel**: Avoid overly dense, dashboard-like layouts. The experience should feel like Browse a curated collection or a high-end magazine, not managing a complex system.
+  - **Modularity**: Design components to be modular and reusable, ensuring consistency across different sections of the application.
+
+-----
+
+## ♿ Accessibility (A11y)
+
+FilmFindr is committed to being an inclusive platform, usable by everyone, regardless of ability. This is a core aspect of being a "trusted guide."
+
+  - **Standards**: Aim to meet or exceed Web Content Accessibility Guidelines (WCAG) 2.1 Level AA.
+  - **Color Contrast**: Ensure sufficient contrast between text and background colors, especially with the dark theme and vibrant accents. Use tools to verify contrast ratios.
+  - **Keyboard Navigation**: All interactive elements (buttons, links, form fields, custom components) must be fully navigable and operable using only a keyboard, in a logical order. Focus states must be clearly visible.
+  - **Semantic HTML**: Use appropriate HTML5 tags (e.g., `<nav>`, `<main>`, `<article>`, `<button>`) to convey structure and meaning to assistive technologies.
+  - **ARIA Attributes**: Use ARIA (Accessible Rich Internet Applications) attributes judiciously where semantic HTML alone is insufficient to provide necessary context for custom widgets or dynamic content changes.
+  - **Alternative Text**: Provide descriptive `alt` text for all meaningful images (e.g., movie posters, user avatars). Decorative images should have empty `alt=""`.
+  - **Forms**: Ensure all form inputs have associated labels and provide clear error messages.
+  - **Motion**: Provide mechanisms to reduce or disable non-essential animations if users prefer (respect `prefers-reduced-motion`).
+  - **Testing**: Regularly test with assistive technologies (screen readers, magnifiers) and conduct accessibility audits.
+
+-----
+
+## 💬 Tone of Voice
+
+FilmFindr's tone of voice is friendly, intelligent, slightly cinematic, and effortlessly cool – like a film-savvy friend who's also a trusted curator. It aims to create "delightful relief" and build an emotional connection.
+
+  - **Core Attributes**:
+
+      - **Reassuring & Trustworthy**: Instills confidence in the recommendations and the platform. ("Let FilmFindr guide you...", "Picks just for you...")
+      - **Intelligent & Insightful**: Reflects the AI's capability without being overly technical. ("Based on your love for [Genre/Actor]...", "Discover films that resonate with your current mood.")
+      - **Enthusiastic & Cinematic**: Shares a genuine passion for film and TV. ("Dive into a world of...", "Your next obsession awaits...", "A true masterpiece...")
+      - **Playful & Witty (Subtly)**: Engages with light humor or clever phrasing, especially in dynamic search prompts or themed quizzes. ("Feeling nostalgic for the 90s?", "What would Wes Anderson recommend today?")
+      - **Effortless & Clear**: Easy to understand, concise, and avoids jargon. Prioritizes user clarity.
+      - **Personal & Inclusive**: Uses "you" and "your" to make the experience feel tailored. Language is welcoming to all film lovers, from casual viewers to cinephiles.
+
+  - **Specific Applications**:
+
+      - **AI Nudges (Light-Touch Personification)**: Friendly and brief.
+          - "We’re tuning your picks based on your latest reviews."
+          - "You might like this based on your vibe today."
+          - Opt-in: "Curious why we recommended this?"
+      - **Empty States**: Encouraging and helpful. ("Your watchlist is waiting for its first star\!", "Explore and rate some films to unlock personalized recommendations.")
+      - **Success/Error Messages**: Clear, direct, and helpful. Success messages can have a touch of delight.
+      - **Dynamic Search Prompts**: Engaging and inviting. ("What cinematic journey are you craving?", "Search by mood, actor, or that vague memory...", "Let's find something amazing.")
+      - **Themed Quizzes & Collections**: Copy should be imaginative and fun. ("Craft your perfect movie night...", "Which cinematic universe do you belong in?")
+
+  - **Things to Avoid**:
+
+      - Generic corporate speak or overly formal language.
+      - Technical AI jargon or explaining algorithms.
+      - Being overly demanding or prescriptive.
+      - Sounding like a robot or an unmanaged filter system.
+      - Exaggerated hype or clichés unless used ironically and fittingly.
+      - Language that could feel creepy or invasive regarding data usage.
+
+  - **Button / CTA Copy**: Action-oriented, clear, and inviting.
+
+      - ✅ Examples: "Discover Your Next Favorite", "Explore Similar Vibes", "Add to My Watchlist", "Rate This Film", "Find My Mood Match", "See Why", "Let's Go\!"
+      - 🚫 Examples: "Submit", "Proceed", "OK", "Learn More" (without context).
+
+-----
+
+This branding document governs all UI, UX, and marketing touchpoints for FilmFindr. All new visual components, features, or marketing assets must align with this system to ensure a cohesive, strong, and delightful brand presence that truly serves as an intelligent guide for our users.

@@ -1,0 +1,85 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# 🎬 FilmFindr: Overview
+
+**FilmFindr is your trusted, stylish, and intelligent guide to the chaotic world of streaming.** [cite: 3] It's an AI-powered social discovery platform meticulously designed for movie and TV lovers who crave personalized recommendations that resonate with their mood, taste, and social context[cite: 2]. We combine intelligent film discovery, rich user personalization, and interactive community features into a modern, elegant web app that provides **"delightful relief"** from decision fatigue[cite: 3].
+
+FilmFindr embodies four key personality traits: **Smart & Insightful (The Intelligent Curator)**, **Playful & Engaging (The Film-Savvy Friend)**, **Cinematic & Immersive (The Modern Picture House)**, and **Modern & Stylish (The Elegant Guide)**[cite: 5, 7, 11, 15, 19].
+
+---
+
+## 🔍 The Problem: Streaming Overwhelm
+
+In today's vast digital landscape, streaming platforms present a paradox of choice. Users face endless scrolling, crippling decision fatigue, and fragmented content libraries[cite: 2]. This makes the simple act of finding something genuinely enjoyable to watch a frustrating and time-consuming ordeal, diminishing the joy of movie and TV discovery.
+
+---
+
+## 🎯 Our Solution: Intelligent Curation & Connected Community
+
+FilmFindr tackles streaming overwhelm head-on with a sophisticated **AI Discovery Engine** complemented by a vibrant **Social Platform**[cite: 202, 226]. Our **"quietly brilliant"** AI [cite: 8, 203] learns individual preferences to deliver hyper-personalized recommendations. Beyond just *what* to watch, FilmFindr helps you discover *why* based on your current mood, available time, and preferred genres[cite: 212, 599].
+
+Simultaneously, FilmFindr fosters an **"expressive and emotionally attuned"** community [cite: 11, 398] where users can share opinions, discover through peers, curate collections, and track anticipated releases, all within a **"Cinematic Minimalism with Personality"** visual experience[cite: 16, 403].
+
+---
+
+## ✨ Unique Value Proposition
+
+FilmFindr offers **"delightful relief"** [cite: 3] by:
+
+* **Eliminating Decision Fatigue:** Providing deeply personalized, AI-driven recommendations that adapt to your mood, taste, and social context[cite: 2].
+* **Being Your Intelligent Curator:** Acting as a "trusted guide" that intuitively understands your preferences without complex configurations[cite: 10, 397].
+* **Fostering Engaging Discovery:** Combining smart technology with a playful, "film-savvy friend" community experience[cite: 11, 12, 398, 399].
+* **Delivering a Stylish & Immersive Experience:** Wrapping powerful features in a "Cinematic Minimalism with Personality" design that is modern, elegant, and enjoyable to use[cite: 16, 19, 403, 406].
+
+---
+
+## 👥 Who It's For: The Modern Viewer
+
+FilmFindr is crafted for a discerning audience that values both their time and the quality of their entertainment experiences. Our primary users are:
+
+* **Age Range:** 18–35 years old.
+* **Tech-Savviness:** Moderately to highly tech-savvy; comfortable with streaming services, social media, and modern web/mobile applications.
+* **Lifestyle:** Urban or suburban, culturally engaged, time-conscious yet experience-driven. They seek quality and personalization.
+* **Viewing Habits:**
+    * **Casual Enthusiasts to Developing Cinephiles:** Enjoy movies and TV shows regularly but dislike the friction of finding what to watch.
+    * **Mood-Based Watchers:** Often select content based on their current emotional state or desired feeling.
+    * **Social Sharers & Curators:** Enjoy discussing media, sharing their opinions, seeing what friends are watching, and building personal collections that reflect their identity[cite: 226, 240, 613, 627].
+    * **Streaming Hoppers:** Subscribe to multiple services and need a unified way to discover and track content across platforms[cite: 221, 292, 608, 679].
+
+FilmFindr is *not* primarily aimed at very young children or users solely interested in surface-level trending content without personalization[cite: 308].
+
+---
+
+## 💡 Core Experience Highlights
+
+FilmFindr offers a seamless and engaging journey for discovering and enjoying movies and TV shows:
+
+* **Hyper-Personalized AI Recommendations:** Experience suggestions that feel uniquely tailored to your nuanced taste profile, viewing history, and selected mood, powered by our **"quietly brilliant"** AI Discovery Engine[cite: 8, 203, 205, 206, 590, 592, 593].
+* **Intuitive Mood-Based Discovery:** Easily filter and find content that perfectly matches how you feel, using an elegant and **"playful"** Mood-Based Discovery UI with animated elements[cite: 13, 115, 134, 212, 215, 502, 521, 599, 602].
+* **Smart Watchlists & Collections:** Curate your personal library with AI-assisted watchlists that can suggest what to watch next[cite: 241, 242, 628, 629], and create beautiful, shareable themed collections that express your cinematic identity[cite: 246, 247, 633, 634].
+* **Engaging Social Platform:** Share your reviews, "hot takes," and discover content through a feed that feels like a **"beautifully curated zine"**[cite: 12, 226, 227, 399, 613, 614]. React with expressive, mood-based tags rather than just standard likes[cite: 118, 231, 232, 505, 618, 619].
+* **Taste Matching (CineMatch):** Discover and connect with other users who share your unique cinematic tastes through our intelligent matching system[cite: 267, 268, 654, 655].
+* **Comprehensive Release Tracking:** Stay ahead of new releases with a follow system for your favorite titles, creators, and actors, complete with smart notifications and a visually rich calendar view[cite: 277, 278, 283, 287, 664, 665, 670, 674].
+* **Seamless Streaming Integration:** Instantly see where to watch any title across your subscribed services, eliminating the cross-platform search hassle[cite: 221, 224, 292, 296, 608, 611, 679, 683].
+
+---
+
+## 🧱 Tech Stack
+
+FilmFindr is built with a modern, robust, and scalable technology stack:
+
+-   **Frontend:** Next.js 15 (App Router), React 19
+-   **Styling:** Tailwind CSS 4
+-   **UI Components:** Shadcn/UI, AnimateUI, MagicUI. Components from Aceternity UI are adapted to JSX and styled with Tailwind CSS.
+-   **Animation:** Framer Motion
+-   **Backend & Database:** Firebase (Authentication, Firestore for user & app data, Firebase Storage for images/blobs)
+-   **Key Libraries:** Lucide Icons (iconography), React Hook Form (forms), Zod (validation), Sonner (toasts), `next-themes` (for dark/light/system theme management [cite: 367, 368, 371]), CMDK (command palette, if used for search).
+-   **Design Principles:** Fully responsive, theme-aware (dark mode default [cite: 17, 38, 425]), and built with accessibility (A11y) as a core consideration[cite: 168, 555].
+
+---
+
+FilmFindr aims to be the definitive companion for anyone who loves movies and TV shows, transforming the way we discover, discuss, and delight in visual storytelling.

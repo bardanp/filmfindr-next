@@ -1,0 +1,200 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+title: filmfindr-schema
+scope: data
+---
+
+# 🧱 FilmFindr – Firestore Database Schema
+
+This schema defines the structure of all major Firestore collections used in the FilmFindr app. All documents follow Firebase best practices and use ISO timestamps.
+
+-----
+
+## 🧑‍💻 Collection: `users/`
+
+Each document stores the profile and preferences of a registered user, keyed by their Firebase Auth UID.
+
+### Fields:
+
+  - `email` (string)
+  - `username` (string)
+  - `avatar` (string URL)
+  - `bio` (string, optional)
+  - `createdAt` (timestamp)
+  - `preferences` (object)
+      - `moods`: string[]
+      - `genres`: string[]
+  - `watchlistCount` (number)
+  - `followersCount` (number)
+  - `followingCount` (number)
+
+-----
+
+## 📚 Collection: `watchlists/`
+
+Stores all individual watchlist entries. Each entry links a user to a movie or show.
+*Note: The original prompt had `watchlists/` and `collections/` with very similar fields. For clarity, if `watchlists/` is primarily for a user's *single, primary* "want to watch" list, and `collections/` is for multiple, themed, shareable lists, this distinction should be maintained. If they were meant to be one concept, they'd be merged. Assuming they are distinct as presented.*
+
+### Fields:
+
+  - `userId` (string, Firebase UID)
+  - `title` (string) — e.g., "My Personal Watchlist" (if singular per user, title might be implicit or fixed)
+  - `items`: array of objects
+      - `tmdbId` (number)
+      - `mediaType` (string: "movie" or "tv")
+      - `addedAt` (timestamp)
+      - `notes` (string, optional)
+  - `isPrivate` (boolean, usually true for a personal watchlist)
+  - `createdAt` (timestamp)
+  - `updatedAt` (timestamp)
+
+-----
+
+## 🔮 Collection: `recommendations/`
+
+Contains personalized AI-generated recommendations per user. This might be a subcollection under `users/{userId}/recommendations` or a top-level collection queryable by `userId`.
+
+### Fields:
+
+  - `userId` (string)
+  - `recs`: array of objects
+      - `tmdbId` (number)
+      - `mediaType` (string: "movie" or "tv")
+      - `score` (number, 0–1, representing AI confidence or relevance)
+      - `reasoning` (string, optional, brief explanation for the recommendation, e.g., "Because you liked X and enjoy Y genre with Z mood")
+      - `source` (string, optional, e.g., "mood\_match", "similar\_to\_watchlist\_item")
+  - `generatedAt` (timestamp) // Renamed from updatedAt for clarity of generation time
+
+-----
+
+## 📝 Collection: `posts/` (Renamed from `reviews/` for broader scope)
+
+Stores social posts shared by users, which can include reviews, quick takes, image shares, etc.
+
+### Fields:
+
+  - `userId` (string, Firebase UID of the author)
+  - `type` (string: "review", "take", "image\_share", "link\_share")
+  - `title` (string, optional, e.g., for longer reviews)
+  - `content` (string, markdown allowed for rich text)
+  - `tmdbId` (number, optional, if the post is about a specific movie/show)
+  - `mediaType` (string, optional: "movie" or "tv", if `tmdbId` is present)
+  - `images` (array of string URLs, for uploaded images)
+  - `moodTags` (array of strings, optional, user-defined or selected from predefined list e.g., `pink-accent` tags)
+  - `likeCount` (number, default 0)
+  - `commentCount` (number, default 0)
+  - `shareCount` (number, default 0)
+  - `createdAt` (timestamp)
+  - `updatedAt` (timestamp)
+
+-----
+
+## 💬 Collection: `comments/`
+
+Each document is a comment under a `posts` document. This would typically be a subcollection: `posts/{postId}/comments/`.
+
+### Fields:
+
+  - `postId` (string, document ID from `posts`)
+  - `userId` (string, Firebase UID of the commenter)
+  - `content` (string)
+  - `likeCount` (number, default 0)
+  - `parentCommentId` (string, optional, for threaded replies)
+  - `createdAt` (timestamp)
+  - `updatedAt` (timestamp)
+
+-----
+
+## 👥 Collection: `follows/`
+
+Stores follower/following relationships between users. To enable efficient querying for both followers and following lists, consider a structure that supports this or use denormalization in user profiles.
+
+### Example Structure (One document per follow relationship):
+
+  - `followerId` (string, Firebase UID of the user who is following)
+  - `followingId` (string, Firebase UID of the user being followed)
+  - `createdAt` (timestamp)
+
+*Alternatively, store `following` as an array in `users/{userId}/` and `followers` also as an array, or manage through a subcollection like `users/{userId}/followers/{followerUid}` and `users/{userId}/following/{followingUid}`.*
+
+-----
+
+## 🧠 Collection: `user_collections/` (Renamed from `collections/` for clarity against personal watchlist)
+
+Used for user-created curated lists of movies/TV shows (public or private), distinct from their primary `watchlist`. These align with the "Collections (Curated Sets & 'Digital Zines')".
+
+### Fields:
+
+  - `userId` (string, Firebase UID of the creator)
+  - `title` (string, e.g., "My Top 10 Sci-Fi Films of the 90s")
+  - `description` (string, optional, markdown allowed)
+  - `coverImage` (string URL, optional, user-uploaded or auto-generated)
+  - `items`: array of objects
+      - `tmdbId` (number)
+      - `mediaType` (string: "movie" or "tv")
+      - `addedAt` (timestamp)
+      - `notes` (string, optional, user's note about this specific item in the collection)
+  - `tags` (string[], optional, for discoverability, e.g., "SciFi", "90s", "Mind-bending")
+  - `isPublic` (boolean, default false)
+  - `collaboratorIds` (array of string UIDs, optional, for collaborative lists)
+  - `likeCount` (number, default 0)
+  - `viewCount` (number, default 0)
+  - `createdAt` (timestamp)
+  - `updatedAt` (timestamp)
+
+-----
+
+## 🗓 Collection: `user_release_tracking/` (Renamed for clarity)
+
+Used to track upcoming releases a user is interested in. Could be a subcollection: `users/{userId}/tracked_releases`.
+
+### Fields:
+
+  - `userId` (string)
+  - `tmdbId` (number, ID of the movie, TV show, person, or studio being tracked)
+  - `mediaType` (string: "movie", "tv\_show", "person", "studio")
+  - `trackedItemTitle` (string, e.g., "Dune: Part Three", "Christopher Nolan", "A24")
+  - `expectedReleaseDate` (string or timestamp, if known)
+  - `notify` (boolean, if user wants notifications for this item)
+  - `notes` (string, optional)
+  - `addedAt` (timestamp)
+
+-----
+
+## 📈 Collection: `activity_stream/` (Renamed from `activity_feed/` for consistency)
+
+Stores event data for generating user-specific or global activity feeds. This often involves denormalizing some data for efficient feed generation.
+
+### Fields:
+
+  - `actorId` (string, UID of the user performing the action)
+  - `actorUsername` (string, denormalized for display)
+  - `actorAvatar` (string URL, denormalized for display)
+  - `verb` (string: "liked\_post", "commented\_on\_post", "created\_collection", "followed\_user", "rated\_movie", "added\_to\_watchlist")
+  - `objectId` (string, ID of the entity being acted upon, e.g., postId, collectionId, userId, tmdbId)
+  - `objectType` (string, e.g., "post", "collection", "user", "movie")
+  - `objectTitle` (string, optional, denormalized title of the object for quick display)
+  - `objectThumbnail` (string URL, optional, denormalized thumbnail)
+  - `targetId` (string, optional, UID of the user who owns the object, if applicable, for notifications)
+  - `createdAt` (timestamp)
+  - `isPublic` (boolean, determines visibility in wider feeds vs. private notifications)
+
+-----
+
+## 🧪 General Notes & Best Practices
+
+  - **Timestamps:** Consistently use `FieldValue.serverTimestamp()` from Firebase SDK to populate `createdAt` and `updatedAt` fields for accuracy and server-side consistency.
+  - **TMDB IDs:** Store all `tmdbId` fields as numbers. Include `mediaType` ("movie" or "tv") alongside TMDB IDs wherever ambiguity might exist, as TMDB IDs can overlap between movies and TV shows.
+  - **Security Rules:** Enforce all data access control, validation, and integrity primarily through Firebase Security Rules. Frontend validation is for UX improvement, not security.
+  - **Pagination:** Design all collections with pagination in mind. Firestore's `limit()` and `startAfter()` methods with cursors based on `createdAt` or other relevant fields are standard.
+  - **Denormalization:** For read-heavy operations (like feeds or displaying user info on posts), strategically denormalize data (e.g., store `username` and `avatar` on posts/comments) to reduce complex queries and improve performance. Update denormalized data using Cloud Functions when the source data changes.
+  - **Subcollections:** Utilize subcollections where appropriate for better data organization and querying (e.g., `posts/{postId}/comments/`, `users/{userId}/watchlist_items/`).
+  - **Indexes:** Define necessary composite indexes in Firestore for any complex queries not covered by automatic indexing to ensure query performance.
+  - **Data Minimization:** Only fetch the data necessary for each view to optimize read costs and performance.
+  - **Consistency:** Maintain consistent naming conventions for fields across collections (e.g., `userId`, `tmdbId`, `createdAt`, `updatedAt`).
+
+<!-- end list -->

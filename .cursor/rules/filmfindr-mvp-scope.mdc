@@ -1,0 +1,181 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# ✅ FilmFindr – MVP Scope
+
+This document defines the complete feature set, user experience goals, and technical boundaries for the **Minimum Viable Product (MVP)** launch of FilmFindr. The MVP is the crucial first step in delivering on our core promise: eliminating decision fatigue and providing users with a feeling of **"delightful relief"** [cite: 3] by introducing them to a trusted, stylish, and intelligent guide for discovering movies and TV shows.
+
+While the feature set is focused, the MVP will embody the essence of the FilmFindr brand from day one: **Smart & Insightful, Playful & Engaging, Cinematic & Immersive, and Modern & Stylish**[cite: 5, 7, 11, 15, 19].
+
+---
+
+## 🔐 Authentication
+
+The authentication module ensures a secure and seamless entry point into the FilmFindr experience, reflecting our **"Modern & Stylish"** [cite: 19] personality.
+
+-   **Firebase Authentication:**
+    -   Initial support for email/password authentication only.
+-   **Signup and Login Forms:**
+    -   Forms will be implemented using client components.
+    -   Utilize `react-hook-form` for robust input control and state management.
+    -   Employ `zod` for schema-based validation, ensuring data integrity.
+    -   Leverage `sonner` for toast notifications, providing clear success or error feedback to the user. Toast styling will align with the brand's color palette (e.g., using semantic colors for error/success [cite: 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91]).
+    -   UI design will follow **"Cinematic Minimalism with Personality"**[cite: 16], ensuring forms are clean, inviting, and easy to navigate.
+-   **Global AuthContext:**
+    -   A global context will manage and expose authentication state: `user` object, `loading` status.
+    -   It will also provide a `logout()` function for users.
+-   **Route Protection:**
+    -   Authenticated routes (e.g., `/dashboard`, `/watchlist`) will be protected, redirecting unauthenticated users to the login page. This process should be smooth and intuitive[cite: 9].
+
+---
+
+## 🧠 AI Recommendation Engine (MVP)
+
+The MVP of the AI Recommendation Engine will introduce users to FilmFindr's **"Smart & Insightful (The Intelligent Curator)"** [cite: 7] capabilities, aiming to be **"quietly brilliant"** [cite: 8] even with initial simplifications. The goal is to showcase the potential for personalized discovery and provide immediate value.
+
+-   **Recommendation Feed:**
+    -   A primary feed on the dashboard displaying movie/TV recommendations.
+    -   For MVP, these recommendations may be initially static or seeded from a curated dataset. However, the presentation will be designed to *feel* personalized and intriguing.
+-   **Filtering Capabilities (Simplified):**
+    -   Users can filter recommendations by:
+        -   **Genre:** A predefined list of core genres.
+        -   **Mood:** A select few representative moods (e.g., "Exciting," "Relaxing," "Thought-provoking") presented via simple, elegant UI controls (e.g., stylized tags or dropdowns, hinting at the fuller **"Mood-Based Discovery UI"** [cite: 134, 215] to come). These might use the `pink-accent` color sparingly[cite: 68, 69, 70].
+        -   **Duration:** Simple categories (e.g., "Under 90 mins," "90-120 mins," "Over 120 mins").
+    -   Filter controls will be intuitive and align with the **"Modern & Stylish"** [cite: 19] design principles.
+-   **Recommendation Display:** Each item in the feed will showcase:
+    -   **Poster:** High-quality poster art, prominently displayed, adhering to the **"Cinematic & Immersive"** [cite: 15] feel.
+    -   **Title:** Clear, legible typography[cite: 94].
+    -   **Genre Tags:** Succinct tags.
+    -   **Brief Description:** A short, engaging synopsis.
+    -   **Streaming Availability:** For MVP, this will be a placeholder (e.g., "Available on popular streaming services") or link to a general search, as full API integration is post-MVP.
+    -   **Presentation:** Recommendations will be unveiled with simple **"Cinematic Reveal Animations"** (e.g., subtle fades or scale effects) to create a "mini-premiere" moment[cite: 135, 210].
+
+---
+
+## 📝 Watchlist
+
+The MVP Watchlist allows users to begin curating their viewing journey, reflecting the **"Playful & Engaging"** [cite: 11] aspect of personal collection and the **"Modern & Stylish"** [cite: 19] ease of use.
+
+-   **Core Functionality:**
+    -   Users can add movies/TV shows from the recommendation feed to their personal watchlist.
+    -   Users can remove items from their watchlist.
+    -   Interactions (add/remove) will be smooth and responsive, with clear visual feedback.
+-   **Storage:**
+    -   Watchlist data will be stored in Firestore, associated with the authenticated user's ID.
+-   **Display:**
+    -   A dedicated page at `/dashboard/watchlist` will display all saved items.
+    -   The list will be presented in a clean, uncluttered, and visually appealing manner, using card-based layouts that align with **"Cinematic Minimalism with Personality"**[cite: 16]. Each item will show at least the poster and title.
+-   **User Association:** Watchlist state is saved per user via Firebase Authentication.
+-   **MVP Sorting/Tagging:** Basic sorting (e.g., recently added) will be available. Advanced AI-driven sorting or rich genre tagging within the watchlist (as described in the "Smart Watchlist" [cite: 241, 242] of the full modules) is not in scope for MVP.
+
+---
+
+## 🌐 App Pages
+
+All app pages will consistently reflect FilmFindr's brand identity, particularly the **"Cinematic Minimalism with Personality"** [cite: 16] visual style and the **dark mode default**[cite: 38]. Navigation will be fluid and intuitive.
+
+### `/landing`
+-   A public-facing marketing page designed to attract and convert new users. It will:
+    -   Feature a compelling Hero section with a clear Call to Action (CTA).
+    -   Provide an overview of FilmFindr's key features and benefits (focusing on MVP capabilities but hinting at the broader vision).
+    -   Include a "How it Works" section explaining the core value proposition of AI-driven discovery and mood adaptation[cite: 2].
+    -   Showcase testimonials (initially curated or illustrative).
+    -   Potentially include a concise FAQ section.
+    -   Conclude with a final CTA to sign up.
+    -   This page will fully embody all aspects of the brand personality [cite: 5] and visual style guidelines[cite: 1, 37, 94, 108, 119, 148, 156, 168, 179].
+
+### `/auth/login` and `/auth/signup`
+-   Client-side rendered components with comprehensive input validation (using `react-hook-form` and `zod`) and clear success/error messaging (`sonner`).
+-   Will utilize shared `shadcn/ui` components (Buttons, Inputs, Cards for form structure) styled according to brand guidelines[cite: 1, 121].
+-   The user experience will be reassuring and straightforward, minimizing friction.
+
+### `/dashboard`
+-   The primary authenticated user experience for MVP.
+-   **User’s Home Feed:** This will be the main area displaying the AI-generated (or seeded) recommendations.
+-   **Personalized Recommendation Area:** This is the core of the dashboard feed.
+-   **Watchlist Quick View:** A small, visually distinct section or card on the dashboard that provides a glimpse of a few recently added watchlist items and a clear link/CTA to the full `/dashboard/watchlist` page.
+-   **Welcome Message:** A simple, friendly welcome message (e.g., "Welcome back, [User]!" or "Discover your next favorite film, [User]!"). A detailed taste profile summary [cite: 262, 263] is a post-MVP feature.
+
+---
+
+## 🎨 UI and Design Scope
+
+The MVP will establish FilmFindr's signature visual identity, emphasizing **"Cinematic Minimalism with Personality"** [cite: 16] and a **"Modern & Stylish"** [cite: 19] feel.
+
+-   **Component Styling:**
+    -   All core UI elements (inputs, buttons, cards, accordions, tabs, etc.) will be built using **`shadcn/ui`** components, customized to match the FilmFindr brand aesthetics (colors, typography, spacing [cite: 1, 37, 94, 156]).
+-   **Animations & Motion:**
+    -   Key interactions, page transitions, and content reveals (especially for recommendations) will be subtly animated using **`MagicUI`**, **`AnimateUI`** (`MotionEffect` [cite: 131]), or directly with **`framer-motion`**[cite: 129].
+    -   Animations will be fluid, purposeful, and enhance the **"delightful relief"** [cite: 3] and **"cinematic"** [cite: 15] feel without being distracting[cite: 133, 145].
+-   **Theming:**
+    -   A theme-aware design will be implemented using Tailwind CSS tokens (`bg-background`[cite: 43], `text-foreground`[cite: 51], `bg-primary`[cite: 73], etc.).
+    -   **`next-themes`** will be used to manage color schemes, with **dark mode as the default and recommended theme** [cite: 17, 38, 93] to enhance the immersive, cinematic experience. System preference will also be supported.
+-   **Responsiveness:**
+    -   The application will be fully responsive, ensuring a seamless experience across common breakpoints (`sm:`, `md:`, `lg:`). Thorough testing will be conducted on mobile, tablet, and desktop viewport sizes[cite: 156].
+
+---
+
+## 📚 Component Libraries
+
+The MVP will leverage the following libraries to achieve its design and functionality goals:
+
+-   `shadcn/ui` (core UI components) [cite: 121]
+-   `AnimateUI` (for specific animation components like MotionEffect) [cite: 122, 124]
+-   `MagicUI` (for unique interactive elements and animations) [cite: 122, 124]
+-   `Aceternity UI` (components selectively converted to JSX and styled with Tailwind, for unique visual effects) [cite: 122, 123]
+-   `framer-motion` (foundational animation library) [cite: 129]
+-   `lucide-react` (iconography) [cite: 109]
+-   `react-hook-form` (form handling)
+-   `zod` (schema validation)
+-   `sonner` (toast notifications)
+-   `next-themes` (theme management)
+
+---
+
+## 🛠 Tech & Infra
+
+The technical foundation for the FilmFindr MVP will be:
+
+-   **Next.js 15** (App Router)
+-   **React 19**
+-   **Tailwind CSS 4**
+-   **Firebase Authentication** (Email/Password)
+-   **Firestore** (for user data, specifically watchlists in MVP)
+
+---
+
+## 🧪 Not in Scope for MVP
+
+To ensure a focused and achievable launch, the following features and functionalities (many of which are detailed in the `filmfindr-modules.mdc` [cite: 201]) are explicitly **NOT** part of the MVP. They are planned for future roadmap phases.
+
+-   **Advanced Authentication:** Google OAuth, Apple Sign-In, or other third-party providers.
+-   **Full Social Platform:** [cite: 226]
+    -   Posting user-generated content (reviews, screenshots, discussions)[cite: 227, 228].
+    -   Social feed and advanced interactions (emotional reactions beyond MVP placeholders, threaded comments)[cite: 231, 232].
+    -   Following other users and detailed activity streams[cite: 235, 236].
+-   **Advanced AI & Personalization:**
+    -   Dynamic, real-time AI learning from ongoing user behavior for recommendations (MVP is seeded/static).
+    -   Trending prediction & "Hidden Gem" spotting[cite: 217].
+    -   AI-driven "Smart Watchlist" features (prioritization, mood-based sorting)[cite: 241, 242].
+    -   Detailed taste profile generation and display.
+-   **Profiles & Matching:**
+    -   Public user profiles with detailed activity, badges, and collections[cite: 262, 263].
+    -   "CineMatch" taste matching system[cite: 267, 268].
+    -   Full "Soft Achievements" badging system (beyond basic display concepts)[cite: 273].
+-   **Collections & Quizzes:**
+    -   User creation of themed collections[cite: 246, 247].
+    -   "Themed Collections & Quizzes" feature[cite: 251].
+    -   Collaborative lists[cite: 252].
+-   **Release Tracking:** [cite: 277]
+    -   Following releases, smart notification system, calendar view[cite: 278, 283, 287].
+-   **Full Streaming Integration:**
+    -   Live, comprehensive "Where to Watch" data from streaming APIs[cite: 292, 293].
+    -   Streaming service comparison tools[cite: 297].
+    -   Browser extension support[cite: 301].
+-   **Other:** Group watch functionality, in-depth viewing analytics for users, advanced notification system.
+
+---
+The FilmFindr MVP aims to deliver a polished, engaging, and valuable initial experience, setting a strong foundation for the exciting features planned in our future roadmap.
